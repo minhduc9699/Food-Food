@@ -16,9 +16,6 @@ function showSlides() {
 
 showSlides(slideIndex = 0);
 
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
 
 var mouseOver_outs = document.getElementsByClassName("mouseOver_out");
 var mouseOver_outIndex
@@ -35,30 +32,6 @@ for(j = 0; j < mouseOver_outs.length; j++){
     mouseOver_out(mouseOver_outIndex = j);
 }
 
-
-
-
-// var api_key = "6c43eaddf1fcf5f90698fe0511840f65";
-// var url = "https://www.food2fork.com/api/search?key";
-// var url2 = "https://www.food2fork.com/api/get?key"
-// function fetchRecipes(){
-//     var fullUrl = `${url}=${api_key}&q=egg`;
-//     console.log(fullUrl);
-//     sendGetRequest(fullUrl, function(responseData){
-//         var recipes_data= responseData.recipes;
-//         console.log(recipes_data)
-//         for(i = 0; i < recipes_data.length; i++){
-//             var recipes_ids = recipes_data[i].recipe_id;
-//             var fullUrl2 = `${url2}=${api_key}&rId=${recipes_ids}`
-//             sendGetRequest(fullUrl2, function (responseData2){
-//                 console.log(responseData2);
-//             })
-//         }
-//     });
-// }
-
-// fetchRecipes();
-
 function IconNextLeft(){
     var iconNextLefts = document.getElementsByClassName("icon-next-left");
     console.log(iconNextLefts);
@@ -66,8 +39,52 @@ function IconNextLeft(){
         var iconNextLeft = iconNextLefts[i];
         iconNextLeft.addEventListener('click', function(e){
             console.log("done");
-            clearTimeout(currentSlide);
+            showSlides(slideIndex--);
         })
     }
 }
-IconNextLeft();
+
+function renderInfo(content_recipes_infos){
+    var content = document.getElementById("content_recipes");
+    console.log(content)
+    for(m = 0; m < content_recipes_infos.length; m++){
+        var recipe_info = content_recipes_infos[m].recipe;
+        var imgSrc = recipe_info.image;
+        var title = recipe_info.label;
+        var ingredients = recipe_info.ingredientLines;
+        for(n = 0; n < ingredients.length; n++){
+            var ingredient = ingredients[n];
+        }
+        var url_recipes_origin = recipe_info.url;
+        var time = recipe_info.totalTime;
+        var people = recipe_info.yield;
+        var recipeHTML = `
+        <div>
+        <img src="${imgSrc}"/>
+        <h2>${title}</h2>
+        <h3>Ingredients: ${ingredient}</h3>
+        <h3>time limit: ${time}</h3>
+        <h3>people limit: ${people}</h3>
+        <div>
+        `;
+
+        content.insertAdjacentHTML("afterbegin", recipeHTML);
+        };
+};
+
+var app_key ="13e049696e5ecdbff2fc78d4b6da8b2f";
+var app_id = "71dbab0b";
+function fetchRecipes(){
+    var fullUrl_recipes = `https://api.edamam.com/search?q=egg&app_id=${app_id}&app_key=${app_key}`;
+    console.log(fullUrl_recipes);
+    sendGetRequest(fullUrl_recipes, function(responseData){
+        var content_recipes_infos = responseData.hits;
+        console.log(content_recipes_infos);
+        renderInfo(content_recipes_infos);
+    });
+}
+
+fetchRecipes();
+
+
+    
