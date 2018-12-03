@@ -35,8 +35,8 @@ function fetchCharacter(){
 };
 
 function setupEvents(){
-    var btnSearch = document.getElementById("btn_search");
-    btnSearch.addEventListener('click', function(e){
+    var btnSearch = document.getElementById("btn_search"); 
+    btnSearch.addEventListener('click', function(e){ //khi nguoi dung click vao search
         var searchBar = document.getElementById("search_bar");
         var searchString = searchBar.nodeValue;
         var key = marvelKey(privateKey, publicKey);
