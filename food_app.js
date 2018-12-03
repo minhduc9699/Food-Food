@@ -1,69 +1,90 @@
-//khai báo biến slideIndex đại diện cho slide hiện tại
 var slideIndex;
-// KHai bào hàm hiển thị slide
 function showSlides() {
-    var i;
     var slides = document.getElementsByClassName("mySlides");
-    var dots = document.getElementsByClassName("dot");
     for (i = 0; i < slides.length; i++) {
        slides[i].style.display = "none";  
+       slides[i].className = slides[i].className.replace(" active", "");
     }
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-    }
-
     slides[slideIndex].style.display = "block";  
-    slides[slideIndex].style.left = "200px";
-    dots[slideIndex].className += " active";
-    //chuyển đến slide tiếp theo
+    slides[slideIndex].className += " active";
     slideIndex++;
-    //nếu đang ở slide cuối cùng thì chuyển về slide đầu
     if (slideIndex > slides.length - 1) {
       slideIndex = 0
     }    
-    //tự động chuyển đổi slide sau 5s
-    setTimeout(showSlides, 5000);
+    setTimeout(showSlides, 7000);
 }
-//mặc định hiển thị slide đầu tiên 
+
 showSlides(slideIndex = 0);
 
-function currentSlide(n) {
-  showSlides(slideIndex = n);
+
+var mouseOver_outs = document.getElementsByClassName("mouseOver_out");
+var mouseOver_outIndex
+function mouseOver_out(){
+    var mouseOver_out = mouseOver_outs[mouseOver_outIndex];
+    mouseOver_out.addEventListener('mouseover', function(e){
+        mouseOver_out.style.fontSize = '23px';
+    });
+    mouseOver_out.addEventListener('mouseout', function(e){
+        mouseOver_out.style.fontSize = '20px';
+    });
+}
+for(j = 0; j < mouseOver_outs.length; j++){
+    mouseOver_out(mouseOver_outIndex = j);
 }
 
-function mouseOver_out(){
-    var mouseOver_outs = document.getElementsByClassName("mouseOver_out");
-    for(i=0; i < mouseOver_outs.length; i++){
-        var mouseOver_out = mouseOver_outs[i];
-        console.log(i)
-        mouseOver_out.addEventListener('mouseover', function(e){
-            mouseOver_out.style.fontSize = '25px';
-            console.log("good")
-        });
-        mouseOver_out.addEventListener('mouseout', function(e){
-            mouseOver_out.style.fontSize = '20px';
-            console.log("good")
-        });
+function IconNextLeft(){
+    var iconNextLefts = document.getElementsByClassName("icon-next-left");
+    console.log(iconNextLefts);
+    for(i = 0; i < iconNextLefts.length; i++){
+        var iconNextLeft = iconNextLefts[i];
+        iconNextLeft.addEventListener('click', function(e){
+            console.log("done");
+            showSlides(slideIndex--);
+        })
     }
 }
 
-var api_key = "6c43eaddf1fcf5f90698fe0511840f65";
-var url = "https://www.food2fork.com/api/search?key";
-var url2 = "https://www.food2fork.com/api/get?key"
-function fetchRecipes(){
-    var fullUrl = `${url}=${api_key}&q=egg`;
-    console.log(fullUrl);
-    sendGetRequest(fullUrl, function(responseData){
-        var recipes_data= responseData.recipes;
-        console.log(recipes_data)
-        for(i = 0; i < recipes_data.length; i++){
-            var recipes_ids = recipes_data[i].recipe_id;
-            var fullUrl2 = `${url2}=${api_key}&rId=${recipes_ids}`
-            sendGetRequest(fullUrl2, function (responseData2){
-                console.log(responseData2);
-            })
+function renderInfo(content_recipes_infos){
+    var content = document.getElementById("content_recipes");
+    console.log(content)
+    for(m = 0; m < content_recipes_infos.length; m++){
+        var recipe_info = content_recipes_infos[m].recipe;
+        var imgSrc = recipe_info.image;
+        var title = recipe_info.label;
+        var ingredients = recipe_info.ingredientLines;
+        for(n = 0; n < ingredients.length; n++){
+            var ingredient = ingredients[n];
         }
+        var url_recipes_origin = recipe_info.url;
+        var time = recipe_info.totalTime;
+        var people = recipe_info.yield;
+        var recipeHTML = `
+        <div>
+        <img src="${imgSrc}"/>
+        <h2>${title}</h2>
+        <h3>Ingredients: ${ingredient}</h3>
+        <h3>time limit: ${time}</h3>
+        <h3>people limit: ${people}</h3>
+        <div>
+        `;
+
+        content.insertAdjacentHTML("afterbegin", recipeHTML);
+        };
+};
+
+var app_key ="13e049696e5ecdbff2fc78d4b6da8b2f";
+var app_id = "71dbab0b";
+function fetchRecipes(){
+    var fullUrl_recipes = `https://api.edamam.com/search?q=egg&app_id=${app_id}&app_key=${app_key}`;
+    console.log(fullUrl_recipes);
+    sendGetRequest(fullUrl_recipes, function(responseData){
+        var content_recipes_infos = responseData.hits;
+        console.log(content_recipes_infos);
+        renderInfo(content_recipes_infos);
     });
 }
 
 fetchRecipes();
+
+
+    
