@@ -45,7 +45,7 @@ function IconNextLeft(){
 }
 
 function renderInfo(content_recipes_infos){
-    var content = document.getElementById("content_recipes");
+    var content = document.getElementById("recent-recipes");
     console.log(content)
     for(m = 0; m < content_recipes_infos.length; m++){
         var recipe_info = content_recipes_infos[m].recipe;
@@ -59,29 +59,32 @@ function renderInfo(content_recipes_infos){
         var time = recipe_info.totalTime;
         var people = recipe_info.yield;
         var recipeHTML = `
-        <div>
-        <img src="${imgSrc}"/>
-        <h2>${title}</h2>
-        <h3>Ingredients: ${ingredient}</h3>
-        <h3>time limit: ${time}</h3>
-        <h3>people limit: ${people}</h3>
-        <div>
+        <div class="recent-recipes-foodname">
+           <div class="smaller-content-recipes-img">
+             <img src="${imgSrc}" />
+           </div>
+           <div class="smaller-content-recipes-fix-title"><p>${title}</p></div>
+        </div>
         `;
 
         content.insertAdjacentHTML("afterbegin", recipeHTML);
         };
 };
-
+var search_contents = ["waffle", "tart"];
 var app_key ="13e049696e5ecdbff2fc78d4b6da8b2f";
 var app_id = "71dbab0b";
 function fetchRecipes(){
-    var fullUrl_recipes = `https://api.edamam.com/search?q=egg&app_id=${app_id}&app_key=${app_key}`;
-    console.log(fullUrl_recipes);
-    sendGetRequest(fullUrl_recipes, function(responseData){
+    for(k = 0; k <search_contents.length; k++){
+        var search_content = search_contents[k];
+        console.log(search_content)
+        var fullUrl_recipes = `https://api.edamam.com/search?q=${search_content}&app_id=${app_id}&app_key=${app_key}&from=0&to=4`;
+        console.log(fullUrl_recipes);
+        sendGetRequest(fullUrl_recipes, function(responseData){
         var content_recipes_infos = responseData.hits;
         console.log(content_recipes_infos);
         renderInfo(content_recipes_infos);
-    });
+        });
+    };
 }
 
 fetchRecipes();
