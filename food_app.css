@@ -16,9 +16,12 @@
     display: flex;
     flex-flow: row;
     justify-content: space-around;
-    font-family: 'Gloria Hallelujah', cursive;
+    align-items: center;
+    font-family: 'Lora', serif;
     font-size: 20px;
+    cursor: pointer;
 }
+
 .search_bar{
     display: flex;
     flex-flow: row;
@@ -30,11 +33,11 @@
 
 .search_bar input[type=text] {
     padding: 6px;
-    font-family: 'Times New Roman'; 
-    font-size: 17px;
+    font-family: 'Merriweather', serif;
+    font-size: 12px;
     border: 1px black solid;
     width: 100%;
-    border-radius: 10px;
+    border-radius: 5.2px;
 }
 
 
@@ -61,7 +64,6 @@
     background: silver;
     height: 100% !important;
 }
-<<<<<<< HEAD
 
 /* .search-bar button {
     padding: 6px 10px;
@@ -72,7 +74,6 @@
     border: none;
     cursor: pointer;
   } */
-=======
 .mySlides{
     width: 100%;
     height: 400px;
@@ -157,4 +158,3 @@ i.fas {
     background-color: whitesmoke;
 }
 
->>>>>>> 2d8d65a0b24e4f1ff81c2119cb773451e72e2506

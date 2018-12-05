@@ -16,7 +16,7 @@ function showSlides() {
 
 showSlides(slideIndex = 0);
 
-
+//Effect nav bar
 var mouseOver_outs = document.getElementsByClassName("mouseOver_out");
 var mouseOver_outIndex
 function mouseOver_out(){
@@ -32,9 +32,10 @@ for(j = 0; j < mouseOver_outs.length; j++){
     mouseOver_out(mouseOver_outIndex = j);
 }
 
+//Slide (set up cho mui ten ben trai)
 function IconNextLeft(){
     var iconNextLefts = document.getElementsByClassName("icon-next-left");
-    console.log(iconNextLefts);
+    console.log(iconNextLefts); //?
     for(i = 0; i < iconNextLefts.length; i++){
         var iconNextLeft = iconNextLefts[i];
         iconNextLeft.addEventListener('click', function(e){
