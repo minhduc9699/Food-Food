@@ -22,7 +22,8 @@
     display: flex;
     flex-flow: row;
     justify-content: space-around;
-    font-family: 'Gloria Hallelujah', cursive;
+    align-items: center;
+    font-family: 'Lora', sans-serif;
     font-size: 20px;
     position: absolute;
     left: 25%;
@@ -30,7 +31,7 @@
 }
 
 #container_heading div {
-    transition: all 0.6s;
+    transition: all 0.1s;
 }
 
 #container_heading div:hover {
@@ -49,11 +50,11 @@
 
 .search_bar input[type=text] {
     padding: 6px;
-    font-family: 'Times New Roman'; 
+    font-family: 'Merriweather'; 
     font-size: 17px;
     border: 1px black solid;
     width: 100%;
-    border-radius: 10px;
+    border-radius: 0px;
 }
 
 .search_bar>div {
@@ -173,6 +174,7 @@ i.fas {
     position: relative;
     width: 100%;
     height: 500px;
+ 
 }
 #special-content{
     display: flex;
@@ -185,7 +187,7 @@ i.fas {
     font-size: 33px;
     width: 220px;
     height: 40px;
-    font-style: italic;
+    /* font-style: italic; */
     font-family: 'Lobster', cursive;
 }
 #special-title{
@@ -200,7 +202,7 @@ i.fas {
     width: 300px;
     height: 90px;
     background-color: rgb(65, 61, 61);
-    font-style: italic;
+    /* font-style: italic; */
     color: white;
 }
 #trythis{
@@ -218,6 +220,7 @@ i.fas {
     font-style: italic;
     color: white;
     font-style: inherit;
+    font-family: 'Lobster', sans-serif;
 }
 #special-img{
     position: absolute;
@@ -242,7 +245,7 @@ i.fas {
     font-size: 33px;
     width: 220px;
     height: 40px;
-    font-style: italic;
+    /* font-style: italic; */
     font-family: 'Lobster', cursive;
 }
 
@@ -258,11 +261,12 @@ i.fas {
 }
 
 .recent-recipes-foodname {
-    box-shadow: 1px 6px 24px 2px rgba(0,0,0,0.75);
+    /* box-shadow: 1px 6px 24px 2px rgba(0,0,0,0.75); */
     width: calc(100% / 4);
     flex-grow: 1;
     transition: transform .2s;
     margin: 0 auto;
+    border: 3px solid silver;
 }
 
 .smaller-content-recipes-img{
@@ -284,7 +288,7 @@ i.fas {
     align-items: center;
     font-size: 18px;
     color: black;
-    font-family: 'Gloria Hallelujah', cursive;
+    font-family: 'Lora', sans-serif;
     word-wrap: break-word;
     padding: 3px;
 
