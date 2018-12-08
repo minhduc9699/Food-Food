@@ -59,11 +59,11 @@ function renderInfo(content_recipes_infos){
         var time = recipe_info.totalTime;
         var people = recipe_info.yield;
         var recipeHTML = `
-        <div class="recent-recipes-foodname">
-           <div class="smaller-content-recipes-img">
-             <img src="${imgSrc}" />
+        <div class="recent-recipes-foodname" >
+           <div class="smaller-content-recipes-img" >
+             <img src="${imgSrc}" class="zoom">
            </div>
-           <div class="smaller-content-recipes-fix-title"><p>${title}</p></div>
+           <div class="smaller-content-recipes-fix-title"><p class="zoom">${title}</p></div>
         </div>
         `;
 
@@ -88,6 +88,7 @@ function fetchRecipes(){
 }
 
 fetchRecipes();
+
 
 
     
