@@ -11,13 +11,18 @@
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Sweet</title>
+
+
+    <title>The Recipe Page</title>
 </head>
 <body>
      <div>
@@ -31,17 +36,17 @@
                         <i class="fa fa-facebook-square" style="font-size:36px"></i>
                     </div>
                     <div class="img_header">
-                        <img src="D:\C4T7\food_app\Food-Food\chef-logo-vector_20448-270.jpg" width="200px" height="200px" >
+                        <img src="https://image.freepik.com/free-vector/chef-logo-vector_20448-270.jpg" width="200px" height="200px" >
                     </div>
                     <div id="container_heading">
                         <div id="container1" class="mouseOver_out">
-                            Recipes
+                            <strong>Recipes</strong>
                         </div>
                         <div id="container2" class="mouseOver_out">
-                            Eat Out
+                            <strong>Eat Out</strong>
                         </div>
                         <div id="container3" class="mouseOver_out">
-                            Drink
+                            <strong>Drink</strong>
                         </div>
                     </div>
                 </div>
@@ -53,15 +58,16 @@
         <div class="search_bar">
             <div>
                 <input type = "text" placeholder = "Search for over 10,000 recipes from around the world" name = "search">
+                <a href = "google.com" id="a_search">
                 <div id = "search_icon">
-                    <a href = "google.com"><i class="fas fa-search" id="search_icon_fas"></i></a>
-                </div>
+                    <i class="fas fa-search" id="search_icon_fas"></i>
+                </div></a>
             </div>
-                   
+                    
         </div>
 
         <!-- Recipe Name -->
-        <div class = "recipe_name_container"><h2 id = "recipe_name">Waffle Tart</h2>
+        <div class = "recipe_name_container"><h1 id = "recipe_name">Waffle Tart</h1>
         </div>
         <table class = "recipe_info">
             <tr>
@@ -79,21 +85,35 @@
                 <td>Legend</td>
             </tr>
         </table>
-        <img class = "food_pic" src = "https://images.unsplash.com/photo-1544541270-e7a70f7b7984?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80" style="width:800px;height:600px;">
-        <ul id = "ingredient_list">
-            <h4>Ingredient</h4>
-            <li>8 eggwhites</li>
-            <li>2 tsp of coffee</li>
-            <li>1 cup of peanut butter</li>
-            <li>10 pounds of sugar</li>
-            <li>Hope and dream for baking</li>
-        </ul>
-        <ul id = "method">
-            <h4>Method</h4>
-            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc risus nisi, mollis sit amet nibh sed, imperdiet malesuada mauris. Fusce consequat sit amet dui ac ultricies. Integer nec augue orci. Etiam et est ut erat egestas blandit eget rhoncus mi. Nullam nec lectus a lacus maximus mollis nec et risus.</li>
-            <li>Nulla ac scelerisque augue. Nunc vehicula dolor eu urna lobortis euismod a vel leo. Donec porttitor nisi dignissim urna pretium, quis dictum augue lobortis. In feugiat fringilla nulla. Aliquam erat volutpat. Nam ultricies lobortis fringilla. Morbi id convallis augue. Morbi vel augue ac ante sodales scelerisque. Etiam sollicitudin tellus pulvinar, ultrices ex ut, ultricies lacus. Phasellus a dignissim neque.</li>
-            <li>Pellentesque pharetra lorem et leo volutpat, quis rutrum lacus malesuada. Vivamus augue est, sagittis bibendum condimentum eu, faucibus eu leo. </li>
-        </ul>
+        <img class = "food_pic" src = "https://images.unsplash.com/photo-1544541270-e7a70f7b7984?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80" style="width:52%;height:39%;margin-top: 20px;">
+        <div id = "ingredient_method">
+            <div class = "white_space">
+
+            </div>
+            <div class="ingredient_method_container" id = "left">
+                <ul id = "ingredient_list" style="list-style-type:none">
+                    <h4>Ingredient</h4>
+                    <li>8 eggwhites</li><br>
+                    <li>2 tsp of coffee</li><br>
+                    <li>1 cup of peanut butter</li><br>
+                    <li>10 pounds of sugar</li><br>
+                    <li>Hope and dream for baking</li><br>
+                </ul>
+            </div>
+            <div class="ingredient_method_container" id = "right">
+                <ol id = "method">
+                    <h4>Method</h4>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc risus nisi, mollis sit amet nibh sed, imperdiet malesuada mauris. Fusce consequat sit amet dui ac ultricies. Integer nec augue orci. Etiam et est ut erat egestas blandit eget rhoncus mi. Nullam nec lectus a lacus maximus mollis nec et risus.</li>
+                        <br>
+                    <li>Nulla ac scelerisque augue. Nunc vehicula dolor eu urna lobortis euismod a vel leo. Donec porttitor nisi dignissim urna pretium, quis dictum augue lobortis. In feugiat fringilla nulla. Aliquam erat volutpat. Nam ultricies lobortis fringilla. Morbi id convallis augue. Morbi vel augue ac ante sodales scelerisque. Etiam sollicitudin tellus pulvinar, ultrices ex ut, ultricies lacus. Phasellus a dignissim neque.</li>
+                        <br>
+                    <li>Pellentesque pharetra lorem et leo volutpat, quis rutrum lacus malesuada. Vivamus augue est, sagittis bibendum condimentum eu, faucibus eu leo. </li>
+                        <br>
+                </ol>
+            </div>
+            <div class = "white_space"></div>
+            
+        </div>
         
     </div>
     <script src = "recipe_page.js"></script>

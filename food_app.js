@@ -52,15 +52,14 @@ function fetchRecipes(){
         var fullUrl_recipes = `https://api.edamam.com/search?q=${search_content}&app_id=${app_id}&app_key=${app_key}&from=0&to=4`;
         console.log(fullUrl_recipes);
         sendGetRequest(fullUrl_recipes, function(responseData){
-        var content_recipes_infos = responseData.hits;
-        console.log(content_recipes_infos);
-        renderInfo(content_recipes_infos);
+            var content_recipes_infos = responseData.hits;
+            console.log(content_recipes_infos);
+            renderInfo(content_recipes_infos);
         });
     };
 }
 
 fetchRecipes();
-console.log(data);
 
 function collection_title(recipe_collection_title_name){
     var recipe_collections = document.getElementsByClassName('container');
