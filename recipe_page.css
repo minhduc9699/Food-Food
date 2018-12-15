@@ -23,7 +23,7 @@
     flex-flow: row;
     justify-content: space-around;
     align-items: center;
-    font-family: 'Lora', sans-serif;
+    font-family: 'Libre Baskerville', sans-serif;
     font-size: 20px;
     position: absolute;
     left: 25%;
@@ -50,7 +50,7 @@
 
 .search_bar input[type=text] {
     padding: 6px;
-    font-family: 'Merriweather'; 
+    font-family: 'Montserrat', sans-serif;
     font-size: 17px;
     border: 1px black solid;
     width: 100%;
@@ -66,10 +66,20 @@
     width: 60%;
 }
 
+#search_icon_fas {
+    color: black;
+}
+
+#a_search {
+    width: 60px;
+    text-decoration: none;
+}
+
 .search_bar>div>#search_icon {
     position: absolute;
-    width: 60px;
+    width: 100%;
     right: 0;
+    color: black;
 }
 
 #search_icon {
@@ -89,7 +99,8 @@
 }
 
 #recipe_name {
-    font-family: 'Lora', sans-serif;
+    font-family: 'Libre Baskerville', sans-serif;
+
 }
 
 .food_pic {
@@ -111,10 +122,16 @@ table {
     padding: 10px;
 }
 
+th {
+    font-family: 'Lora', sans-serif;
+}
 td {
     margin-left: auto;
     margin-right: auto;
+    font-family: 'Montserrat', sans-serif;
 }
+
+
 
 /* #ingredient_list {
     margin-left: 20%;
@@ -148,10 +165,9 @@ td {
 }
 
 #left {
-    background-color: silver;
-    
+    background-color: silver;    
     display: flex;
-    
+    letter-spacing: 1px;
     margin-top: 20px;
     
 }
@@ -160,6 +176,8 @@ td {
     display: flex;
     justify-content: center;
     margin-top: 20px;
+    letter-spacing: 1px;
+
 }
 
 #method > h4, #ingredient_list > h4 {
@@ -167,6 +185,7 @@ td {
 }
 
 #method > li, #ingredient_list > li {
-    font-family: 'Merriweather';
+    font-family: 'Montserrat', sans-serif;
+
     font-size: 0.93em;
 }

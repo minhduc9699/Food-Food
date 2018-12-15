@@ -22,10 +22,10 @@ var mouseOver_outIndex
 function mouseOver_out(){
     var mouseOver_out = mouseOver_outs[mouseOver_outIndex];
     mouseOver_out.addEventListener('mouseover', function(e){
-        mouseOver_out.style.fontSize = '33px';
+        mouseOver_out.style.fontSize = '23px';
     });
     mouseOver_out.addEventListener('mouseout', function(e){
-        mouseOver_out.style.fontSize = '30px';
+        mouseOver_out.style.fontSize = '20px';
     });
 }
 for(j = 0; j < mouseOver_outs.length; j++){
@@ -80,15 +80,14 @@ function fetchRecipes(){
         var fullUrl_recipes = `https://api.edamam.com/search?q=${search_content}&app_id=${app_id}&app_key=${app_key}&from=0&to=4`;
         console.log(fullUrl_recipes);
         sendGetRequest(fullUrl_recipes, function(responseData){
-        var content_recipes_infos = responseData.hits;
-        console.log(content_recipes_infos);
-        renderInfo(content_recipes_infos);
+            var content_recipes_infos = responseData.hits;
+            console.log(content_recipes_infos);
+            renderInfo(content_recipes_infos);
         });
     };
 }
 
 fetchRecipes();
-console.log(data);
 
 
 
