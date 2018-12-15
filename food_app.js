@@ -16,34 +16,6 @@ function showSlides() {
 
 showSlides(slideIndex = 0);
 
-
-var mouseOver_outs = document.getElementsByClassName("mouseOver_out");
-var mouseOver_outIndex
-function mouseOver_out(){
-    var mouseOver_out = mouseOver_outs[mouseOver_outIndex];
-    mouseOver_out.addEventListener('mouseover', function(e){
-        mouseOver_out.style.fontSize = '33px';
-    });
-    mouseOver_out.addEventListener('mouseout', function(e){
-        mouseOver_out.style.fontSize = '30px';
-    });
-}
-for(j = 0; j < mouseOver_outs.length; j++){
-    mouseOver_out(mouseOver_outIndex = j);
-}
-
-function IconNextLeft(){
-    var iconNextLefts = document.getElementsByClassName("icon-next-left");
-    console.log(iconNextLefts);
-    for(i = 0; i < iconNextLefts.length; i++){
-        var iconNextLeft = iconNextLefts[i];
-        iconNextLeft.addEventListener('click', function(e){
-            console.log("done");
-            showSlides(slideIndex--);
-        })
-    }
-}
-
 function renderInfo(content_recipes_infos){
     var content = document.getElementById("recent-recipes");
     console.log(content)
@@ -70,7 +42,7 @@ function renderInfo(content_recipes_infos){
         content.insertAdjacentHTML("afterbegin", recipeHTML);
         };
 };
-var search_contents = ["waffle", "tart"];
+var search_contents = ["waffle", "tart", "pancake"];
 var app_key ="13e049696e5ecdbff2fc78d4b6da8b2f";
 var app_id = "71dbab0b";
 function fetchRecipes(){
@@ -90,6 +62,23 @@ function fetchRecipes(){
 fetchRecipes();
 console.log(data);
 
-
-
-    
+function collection_title(recipe_collection_title_name){
+    var recipe_collections = document.getElementsByClassName('container');
+    for(i = 0; i < recipe_collections.length; i++){
+        recipe_collection = recipe_collections[i];
+        recipe_collection.addEventListener('mouseover', function(e){
+            console.log("ahhahahasdsd");
+            recipe_collection_title_name.style.height = '250px';
+        });
+        recipe_collection_title_name.addEventListener('mouseout', function(e){
+            console.log("ahhahahasdsd");
+            recipe_collection_title_name.style.height = '0px';
+        });
+    }
+}
+var recipe_collection_title_names = document.getElementsByClassName("header_collection");
+console.log(recipe_collection_title_names);
+for(j = 0; j < recipe_collection_title_names.length; j++){
+    recipe_collection_title_name = recipe_collection_title_names[j];
+    collection_title(recipe_collection_title_name);
+}
