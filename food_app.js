@@ -75,6 +75,8 @@ function collection_title(recipe_collection_title_name){
         });
     }
 }
+
+//
 var recipe_collection_title_names = document.getElementsByClassName("header_collection");
 console.log(recipe_collection_title_names);
 for(j = 0; j < recipe_collection_title_names.length; j++){
