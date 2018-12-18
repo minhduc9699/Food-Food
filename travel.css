@@ -199,7 +199,7 @@
 
 .more_post {
     width: 50%;
-    border: 1px black solid;
+    box-shadow:  1px 1px 10px #888888;
     margin-top: 100px;
     margin-left: auto;
     margin-right: auto;
@@ -208,14 +208,22 @@
 }
 
 .more_post_title {
-    
+    padding-top: 25px;
+    width: 100%;
+    line-height: 20px;
 }
 
 .more_post_title > h4 {
     text-align: center;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 20px;
+    color: rgb(119, 233, 233);
 }
 
 .more_post_title > h2 {
     text-align: center;
+    font-size: 30px;
+    font-family: 'Oswald', sans-serif;
+    color: black;
 }
 
