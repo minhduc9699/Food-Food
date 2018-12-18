@@ -150,9 +150,72 @@
     width: 50%;
 }
 
+/* #recent_post {
+    position: relative;
+    display: block;
+    width: 30%;
+}
+
+#recent_post > h3 {
+    font-family: "Libre Baskerville", sans-serif;
+}
+
+#view_all {
+    float: left;    
+    width: 20%;
+}
+
+#view_all > h3 {
+    float: right;
+    
+} */
+
 .title {
     position: absolute;
+    margin-left: 35%;
+    margin-right: 35%;
+    width : 30%;
+    background-color: white;
+    margin-top: -53px;
+    line-height: 20px;
+    box-shadow: 1px 1px 10px #888888;
+}
+
+.title > h4, .title > h2 {
+    text-align: center;
+}
+
+.title > h4 {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 15px;
+    color: rgb(119, 233, 233);
+}
+
+.title > h2 {
+    font-size: 25px;
+    font-family: 'Oswald', sans-serif;
+    color: black;
+}
+
+.more_post {
+    width: 50%;
+    border: 1px black solid;
+    margin-top: 100px;
     margin-left: auto;
     margin-right: auto;
-    width : 30%;
+    height: 180px;
+    display: flex;
 }
+
+.more_post_title {
+    
+}
+
+.more_post_title > h4 {
+    text-align: center;
+}
+
+.more_post_title > h2 {
+    text-align: center;
+}
+
