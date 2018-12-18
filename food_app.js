@@ -74,21 +74,64 @@ function fetchRecipes(){
 fetchRecipes();
 
 function collection_title(recipe_collection_title_name){
-    var recipe_collections = document.getElementsByClassName('container');
-    for(i = 0; i < recipe_collections.length; i++){
-        recipe_collection = recipe_collections[i];
-        recipe_collection.addEventListener('mouseover', function(e){
-            recipe_collection_title_name.style.height = '250px';
-        });
-        recipe_collection_title_name.addEventListener('mouseout', function(e){
-            recipe_collection_title_name.style.height = '0px';
-        });
-    }
-}
-var recipe_collection_title_names = document.getElementsByClassName("header_collection");
-console.log(recipe_collection_title_names);
-for(j = 0; j < recipe_collection_title_names.length; j++){
-    recipe_collection_title_name = recipe_collection_title_names[j];
-    collection_title(recipe_collection_title_name);
+    var recipe_collection1 = document.getElementById("container1");
+    var recipe_collection_title_name1 = document.getElementById("header_collection1");
+    recipe_collection1.addEventListener('mouseover', function(e){
+        recipe_collection_title_name1.style.height = '250px';
+    });
+    recipe_collection_title_name1.addEventListener('mouseout', function(e){
+        recipe_collection_title_name1.style.height = '0px';
+    });
+
+    var recipe_collection2 = document.getElementById("container2");
+    var recipe_collection_title_name2 = document.getElementById("header_collection2");
+    recipe_collection2.addEventListener('mouseover', function(e){
+        recipe_collection_title_name2.style.height = '250px';
+    });
+    recipe_collection_title_name2.addEventListener('mouseout', function(e){
+        recipe_collection_title_name2.style.height = '0px';
+    });
+
+    var recipe_collection3 = document.getElementById("container3");
+    var recipe_collection_title_name3 = document.getElementById("header_collection3");
+    recipe_collection3.addEventListener('mouseover', function(e){
+        recipe_collection_title_name3.style.height = '250px';
+    });
+    recipe_collection_title_name3.addEventListener('mouseout', function(e){
+        recipe_collection_title_name3.style.height = '0px';
+    });
 }
 
+// collection_title();
+
+function setupSearch() {
+    var btnSearch = document.getElementById("search_icon"); 
+    btnSearch.addEventListener('click', function(e){ //khi nguoi dung click vao search
+        var searchInput = document.getElementById("search_info");
+        var searchString = searchInput.value;
+        console.log(searchString);
+        
+        var app_key ="13e049696e5ecdbff2fc78d4b6da8b2f";
+        var app_id = "71dbab0b";
+        if(searchString != ""){
+            fullUrl_recipes = `https://api.edamam.com/search?q=${searchString}&app_id=${app_id}&app_key=${app_key}&from=0&to=4`;
+        };
+        sendGetRequest(fullUrl_recipes, function (responseData3) {
+            var page = document.getElementById("whole page");
+            page.remove();
+            var  content_recipes_infos = responseData.hits;
+            renderInfo(content_recipes_infos);
+        })
+    });
+}
+setupSearch();
+
+const API_YOUTUBE_KEY = 'AIzaSyDOAhAGXfu1UA33SYVPpcheJO9D7DXtCy8';
+const url_search = 'https://www.googleapis.com/youtube/v3/search';
+let search = 'Vu';
+const parts_search = 'snippet';
+fetch(`${url_search}?q=${search}&maxResults=28&key=${API_YOUTUBE_KEY}&part=${parts_search}`).then(function(response){
+    response.json().then(function(data){
+         console.log(data)
+     });
+ })
