@@ -30,8 +30,10 @@ function renderInfo(content_recipes_infos){
         var url_recipes_origin = recipe_info.url;
         var time = recipe_info.totalTime;
         var people = recipe_info.yield;
+        var uri_id = recipe_info.uri;
+        var id_recipe = uri_id.split('_');
         var recipeHTML = `
-        <div class="recent-recipes-foodname" >
+        <div class="recent-recipes-foodname" id="${id_recipe[1]}">
            <div class="smaller-content-recipes-img" >
              <img src="${imgSrc}" class="zoom">
            </div>
@@ -41,7 +43,17 @@ function renderInfo(content_recipes_infos){
 
         content.insertAdjacentHTML("afterbegin", recipeHTML);
         };
+        var recent_recipes_foodname_ids = document.getElementsByClassName("recent-recipes-foodname")
+        console.log(recent_recipes_foodname_ids)
+        for(m = 0; m < recent_recipes_foodname_ids.length; m++){
+            recent_recipes_foodname_ids[m].addEventListener('click', function(event){
+                let ID = event.path[2].getAttribute('id')
+                localStorage.setItem('id', ID);
+                window.location.href = './recipe_page.html';
+            })
+        }
 };
+
 var search_contents = ["waffle", "tart", "pancake"];
 var app_key ="13e049696e5ecdbff2fc78d4b6da8b2f";
 var app_id = "71dbab0b";
@@ -66,11 +78,9 @@ function collection_title(recipe_collection_title_name){
     for(i = 0; i < recipe_collections.length; i++){
         recipe_collection = recipe_collections[i];
         recipe_collection.addEventListener('mouseover', function(e){
-            console.log("ahhahahasdsd");
             recipe_collection_title_name.style.height = '250px';
         });
         recipe_collection_title_name.addEventListener('mouseout', function(e){
-            console.log("ahhahahasdsd");
             recipe_collection_title_name.style.height = '0px';
         });
     }
@@ -81,3 +91,4 @@ for(j = 0; j < recipe_collection_title_names.length; j++){
     recipe_collection_title_name = recipe_collection_title_names[j];
     collection_title(recipe_collection_title_name);
 }
+
