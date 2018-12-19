@@ -170,6 +170,12 @@
     
 } */
 
+
+#recent_post {
+    margin-left: 25%;
+    font-size: 25px;
+    font-family: "Libre Baskerville", sans-serif;
+}
 .title {
     position: absolute;
     margin-left: 35%;
