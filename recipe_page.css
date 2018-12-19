@@ -95,7 +95,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-top: 55px;
+    margin-top: 90px;
     margin-bottom: 10px;
 }
 .src-recipe{
@@ -146,6 +146,11 @@ td {
 .white_space {
     width: 8%;
 }
+#white_space_left{
+    width: 50%;
+    padding: 20px;
+    margin-top: 20px;
+}
 
 #ingredient_list {
     height: 200px;
@@ -175,4 +180,7 @@ td {
     font-family: 'Montserrat', sans-serif;
 
     font-size: 0.93em;
+}
+#img-header {
+    transition: all 0.8s;
 }

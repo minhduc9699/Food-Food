@@ -8,6 +8,26 @@ function renderRecipes2(content_recipes_infoss){
     <div id = "recipe_name" > ${label_recipe} </div>
     `;
     title_recipe.insertAdjacentHTML("afterbegin", recipeHTML_title);
+    
+    const API_YOUTUBE_KEY = 'AIzaSyDOAhAGXfu1UA33SYVPpcheJO9D7DXtCy8';
+    const url_search = 'https://www.googleapis.com/youtube/v3/search';
+    const parts_search = 'snippet';
+    let search = label_recipe;
+    fetch(`${url_search}?q=${search}&maxResults=28&key=${API_YOUTUBE_KEY}&part=${parts_search}`).then(function(response){
+        response.json().then(function(data){
+            console.log(data);
+            var video_id = data.items[0].id.videoId;
+            console.log(video_id);
+            //video
+            var videopart = document.getElementById("white_space_left");
+            var recipeHTML_video = `
+            <iframe width="100%" height="70%" src="https://www.youtube.com/embed/${video_id}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            `
+            videopart.insertAdjacentHTML("afterbegin", recipeHTML_video);
+                });
+    })
+    
+  
 
     //image
     var pic_recipe = document.getElementById("food_pic")
@@ -43,6 +63,9 @@ function renderRecipes2(content_recipes_infoss){
         ingre_recipe.insertAdjacentHTML("beforeend", recipeHTML_ingredient);
     }
     
+    //url
+    var link_recipe = document.getElementById('link');
+    link_recipe.href = content_recipes_infoss.url
 }
 
 var app_key ="13e049696e5ecdbff2fc78d4b6da8b2f";
@@ -73,4 +96,14 @@ function mouseOver_out(){
 for(j = 0; j < mouseOver_outs.length; j++){
     mouseOver_out(mouseOver_outIndex = j);
 }
-
+document.addEventListener("scroll", function(event){
+    var DOMimg = document.getElementById('img-header');
+    var DOMheader = document.getElementById('header_container');
+    if (window.scrollY > 100) {
+        DOMimg.style.width = '100px';
+        DOMimg.style.height = '100px';
+    } else {
+        DOMimg.style.width = '200px';
+        DOMimg.style.height = '200px';
+    }
+});

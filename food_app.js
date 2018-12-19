@@ -92,14 +92,6 @@ function collection_title(recipe_collection_title_name){
         recipe_collection_title_name2.style.height = '0px';
     });
 
-    var recipe_collection3 = document.getElementById("container3");
-    var recipe_collection_title_name3 = document.getElementById("header_collection3");
-    recipe_collection3.addEventListener('mouseover', function(e){
-        recipe_collection_title_name3.style.height = '250px';
-    });
-    recipe_collection_title_name3.addEventListener('mouseout', function(e){
-        recipe_collection_title_name3.style.height = '0px';
-    });
 }
 
 // collection_title();
@@ -114,24 +106,36 @@ function setupSearch() {
         var app_key ="13e049696e5ecdbff2fc78d4b6da8b2f";
         var app_id = "71dbab0b";
         if(searchString != ""){
-            fullUrl_recipes = `https://api.edamam.com/search?q=${searchString}&app_id=${app_id}&app_key=${app_key}&from=0&to=4`;
+            fullUrl_recipes = `https://api.edamam.com/search?q=${searchString}&app_id=${app_id}&app_key=${app_key}&from=0&to=32`;
         };
         sendGetRequest(fullUrl_recipes, function (responseData3) {
-            var page = document.getElementById("whole page");
-            page.remove();
-            var  content_recipes_infos = responseData.hits;
+            var page = document.getElementById("whole-page");
+            //___
+            var content = document.getElementById("recent-recipes");
+            var DOMheaderImage = document.getElementById("header_img_slide");
+            var contentBody = document.getElementById("content-body");
+            console.log(page);
+            DOMheaderImage.innerHTML = " "
+            contentBody.style.display = "none"
+            content.innerHTML = " "
+            var  content_recipes_infos = responseData3.hits;
+            console.log(content_recipes_infos);
+            
             renderInfo(content_recipes_infos);
         })
     });
 }
 setupSearch();
 
-const API_YOUTUBE_KEY = 'AIzaSyDOAhAGXfu1UA33SYVPpcheJO9D7DXtCy8';
-const url_search = 'https://www.googleapis.com/youtube/v3/search';
-let search = 'Vu';
-const parts_search = 'snippet';
-fetch(`${url_search}?q=${search}&maxResults=28&key=${API_YOUTUBE_KEY}&part=${parts_search}`).then(function(response){
-    response.json().then(function(data){
-         console.log(data)
-     });
- })
+
+document.addEventListener("scroll", function(event){
+    var DOMimg = document.getElementById('img-header');
+    var DOMheader = document.getElementById('header_container');
+    if (window.scrollY > 100) {
+        DOMimg.style.width = '100px';
+        DOMimg.style.height = '100px';
+    } else {
+        DOMimg.style.width = '200px';
+        DOMimg.style.height = '200px';
+    }
+});

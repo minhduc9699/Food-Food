@@ -1,0 +1,193 @@
+#header{
+    background-color: white;
+    width: 100%;
+    height: 120px;
+}
+#header_title{
+    position: relative;
+}
+.icon-social-media{
+    position: absolute;
+    left: 75%;
+    top: 20%
+}
+.img_header{
+    position: absolute;
+    left: 10%;
+    top: 10%
+}
+#container_heading{
+    width: 50%;
+    height: 50px;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    align-items: center;
+    font-family: 'Libre Baskerville', sans-serif;
+    font-size: 20px;
+    position: absolute;
+    left: 25%;
+    margin-top: 5%;
+}
+
+#container_heading div {
+    transition: all 0.1s;
+}
+
+#container_heading div:hover {
+    cursor: pointer;
+}
+
+/* .search_bar{
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+    margin-bottom:20px;
+    height: 100%;
+}
+
+.search_bar input[type=text] {
+    padding: 6px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 17px;
+    border: 1px black solid;
+    width: 100%;
+    border-radius: 0px;
+}
+
+.search_bar>div {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    /* width: 100%; */
+    /* height: 100%;
+    width: 60%;
+}
+
+#search_icon_fas {
+    color: black;
+}
+
+#a_search {
+    width: 60px;
+    text-decoration: none;
+}
+
+.search_bar>div>#search_icon {
+    position: absolute;
+    width: 100%;
+    right: 0;
+    color: black;
+}
+
+#search_icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: silver;
+    height: 100% !important;
+} */ 
+
+#recipe_name_container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 90px;
+    margin-bottom: 10px;
+}
+.src-recipe{
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+    font-family: 'Lora';
+    font-style: italic;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+#recipe_name {
+    font-family: 'Libre Baskerville', sans-serif;
+    font-size: 40px;
+    font-style: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+}
+
+#food_pic {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.recipe_info {
+    width: 52%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table {
+    border: 2px black solid;
+    padding: 10px;
+}
+
+th {
+    font-family: 'Lora', sans-serif;
+}
+td {
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#ingredient_method {
+    display: flex;
+}
+
+.white_space {
+    width: 8%;
+}
+#white_space_left{
+    width: 50%;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+#ingredient_list {
+    height: 200px;
+}
+
+#left {
+    display: flex;
+    letter-spacing: 1px;
+    margin-top: 20px;
+    width: 23%;
+}
+
+#right {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    letter-spacing: 1px;
+    width: 35%;
+}
+
+#method > div, #ingredient_list > div {
+    font-family: 'Lora';
+    font-size: 25px;
+}
+
+#method > li, #ingredient_list > li {
+    font-family: 'Montserrat', sans-serif;
+
+    font-size: 0.93em;
+}
+#img-header {
+    transition: all 0.8s;
+}
