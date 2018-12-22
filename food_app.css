@@ -5,6 +5,7 @@
     position: fixed;
     z-index: 999999;
     top:0;
+
 }
 #header_title{
     position: relative;
@@ -16,7 +17,7 @@
 }
 .img_header{
     position: absolute;
-    left: 10%;
+    left: 5%;
     top: 10%
 }
 #container_heading{
@@ -39,7 +40,7 @@
 #container_heading div:hover {
     cursor: pointer;
 }
-.header_collection{
+#header_collection1{
     background-color: rgb(49, 43, 43);
     width: 100%;
     height:0px;
@@ -48,15 +49,29 @@
     top:100px;
     display: flex;
     justify-content:space-around;
-    transition: all 0.8s;
+    transition: all 0.5s;
+    overflow: hidden;
+    display: inherit;
+}
+#header_collection2{
+    background-color: rgb(49, 43, 43);
+    width: 100%;
+    height:0px;
+    position: fixed;
+    z-index: 9999;
+    top:100px;
+    display: flex;
+    justify-content:space-around;
+    transition: all 0.5s;
     overflow: hidden;
 }
+
 .header_collection_item{
     display: flex;
     flex-flow: column;
     justify-content: center;
 }
-.search_bar{
+#search_bar{
     display: flex;
     flex-flow: row;
     justify-content: center;
@@ -66,7 +81,7 @@
     height: 100%;
 }
 
-.search_bar input[type=text] {
+#search_bar input[type=text] {
     padding: 6px;
     font-family: 'Montserrat', sans-serif;
     font-size: 17px;
@@ -75,7 +90,7 @@
     border-radius: 0px;
 }
 
-.search_bar>div {
+#search_bar>div {
     display: flex;
     justify-content: center;
     position: relative;
@@ -83,15 +98,14 @@
     width: 60%;
 }
 
-#a_search {
-    width: 60px;
-    text-decoration: none;
-}
+
 
 .search_bar>div>#search_icon {
     position: absolute;
     width:100%;
     right: 0;
+    width: 60px;
+    text-decoration: none;
 }
 
 #search_icon {
@@ -99,7 +113,8 @@
     justify-content: center;
     align-items: center;
     background: silver;
-    height: 100% !important;
+    /* height: 100% !important;  */
+    width: 70px;
 }
 .mySlides{
     width: 100%;
@@ -220,7 +235,7 @@ i.fas {
     position: absolute;
     left: 25%;
     margin-top: 18%;
-    font-size: 40px;
+    font-size: 35px;
     width: 300px;
     height: 90px;
     background-color: rgb(65, 61, 61);
@@ -288,7 +303,7 @@ i.fas {
     flex-grow: 1;
     transition: transform .2s;
     margin: 0 auto;
-    border: 3px solid silver;
+
 }
 
 .smaller-content-recipes-img{
@@ -330,5 +345,16 @@ i.fas {
     cursor: pointer;
 }
 
+#img-header {
+    transition: all 0.8s;
+    
+}
 
 
+
+@media only screen and (max-width: 600px) {
+    #img-header {
+        width: 100px;
+        height: 100px;
+    }
+}
