@@ -170,15 +170,20 @@
     
 } */
 
+#main_post_container {
+    margin-bottom: 150px;
+}
+
 .title {
     position: absolute;
     margin-left: 35%;
     margin-right: 35%;
     width : 30%;
     background-color: white;
-    margin-top: -53px;
+    margin-top: -72px;
     line-height: 20px;
     box-shadow: 1px 1px 10px #888888;
+    height: 140px;
 }
 
 .title > h4, .title > h2 {
@@ -195,6 +200,7 @@
     font-size: 25px;
     font-family: 'Oswald', sans-serif;
     color: black;
+    line-height: normal;
 }
 
 .more_post {
@@ -225,5 +231,6 @@
     font-size: 30px;
     font-family: 'Oswald', sans-serif;
     color: black;
+    line-height: 30px;
 }
 
