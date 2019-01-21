@@ -114,7 +114,7 @@
     align-items: center;
     background: silver;
     /* height: 100% !important;  */
-    width: 70px;
+    width: 70px;    
 }
 .mySlides{
     width: 100%;
@@ -349,8 +349,6 @@ i.fas {
     transition: all 0.8s;
     
 }
-
-
 
 @media only screen and (max-width: 600px) {
     #img-header {
