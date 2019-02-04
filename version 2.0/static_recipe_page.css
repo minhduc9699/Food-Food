@@ -1,0 +1,218 @@
+/* Header and Navigation bar */
+#header{
+    background-color: white;
+    width: 100%;
+    height: 120px;
+}
+#header_title{
+    position: relative;
+}
+.icon-social-media{
+    position: absolute;
+    left: 75%;
+    top: 20%
+}
+.img_header{
+    position: absolute;
+    left: 10%;
+    top: 10%
+}
+#container_heading{
+    width: 50%;
+    height: 50px;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    align-items: center;
+    font-family: 'Libre Baskerville', sans-serif;
+    font-size: 20px;
+    position: absolute;
+    left: 25%;
+    margin-top: 5%;
+}
+
+#container_heading div {
+    transition: all 0.1s;
+}
+
+#container_heading div:hover {
+    cursor: pointer;
+}
+
+/* Search Bar */
+
+.search_bar{
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+    margin-bottom:20px;
+    height: 100%;
+}
+
+.search_bar input[type=text] {
+    padding: 6px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 17px;
+    border: 1px black solid;
+    width: 100%;
+    border-radius: 0px;
+}
+
+.search_bar>div {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    /* width: 100%; */
+    height: 100%;
+    width: 60%;
+}
+
+#search_icon_fas {
+    color: black;
+}
+
+#a_search { 
+    width: 60px;
+    text-decoration: none;
+}
+
+.search_bar>div>#search_icon {
+    position: absolute;
+    width: 100%;
+    right: 0;
+    color: black;
+}
+
+#search_icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: silver;
+    height: 100% !important;
+}
+
+/* Cong thuc */
+
+.recipe_name_container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 15px;
+}
+
+#recipe_name {
+    font-family: 'Libre Baskerville', sans-serif;
+
+}
+
+.food_pic {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    width:52%;
+    /* height:39%; */
+}
+
+.recipe_info {
+    width: 52%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table { /* Cai nay nen de cu the hon phong truong hop co table khac */
+    border: 2px black solid;
+    padding: 10px;
+}
+
+th {
+    font-family: 'Lora', sans-serif;
+}
+td {
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+
+/* #ingredient_list {
+    margin-left: 20%;
+    float: left;
+}
+
+#method {
+    margin-right: 20%;
+    float: right;
+} */
+
+#ingredient_method {
+    display: flex;
+    /* justify-content: space-between; */
+}
+
+.white_space {
+    width: 24%;
+}
+
+#left {
+    width: 20%;
+}
+
+#right {
+    width: 32%;
+}
+
+/* Neu man hinh kich thuoc nho hon 800px thi set width thanh 100%, nen co nhieu cai nay voi cac loai kich thuoc man hinh */
+@media screen and (max-width: 800px) {
+    .white_space {
+        display: none;
+    }
+    #left {
+        width: 40%;
+    }
+    #right {
+        width: 60%;
+    }
+    .food_pic {
+        width: 100%;
+    }
+    .recipe_info {
+        width: 100%;
+    }
+}
+
+#ingredient_list {
+    height: 200px;
+}
+
+#left {
+    background-color: silver;    
+    display: flex;
+    letter-spacing: 1px;
+    margin-top: 20px;
+    
+}
+
+#right {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    letter-spacing: 1px;
+
+}
+
+#method > h4, #ingredient_list > h4 {
+    font-family: 'Lora';
+}
+
+#method > li, #ingredient_list > li {
+    font-family: 'Montserrat', sans-serif;
+
+    font-size: 0.93em;
+}
+
+/* them min-width vao, de neu cua so nho qua thi width = 100% */

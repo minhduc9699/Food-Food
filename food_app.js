@@ -46,8 +46,8 @@ function renderInfo(content_recipes_infos){
         var recent_recipes_foodname_ids = document.getElementsByClassName("recent-recipes-foodname")
         console.log(recent_recipes_foodname_ids)
         for(m = 0; m < recent_recipes_foodname_ids.length; m++){
-            recent_recipes_foodname_ids[m].addEventListener('click', function(event){
-                let ID = event.path[2].getAttribute('id')
+            recent_recipes_foodname_ids[m].addEventListener('click', function(event){ //luu id vao localStorage
+                let ID = event.path[2].getAttribute('id') //trong duong dan nay se co attribute ten la id, sau do luu id day vao trong localStorage va dan den trang recipe_page.html
                 localStorage.setItem('id', ID);
                 window.location.href = './recipe_page.html';
             })
@@ -61,7 +61,7 @@ function fetchRecipes(){
     for(k = 0; k <search_contents.length; k++){
         var search_content = search_contents[k];
         console.log(search_content)
-        var fullUrl_recipes = `https://api.edamam.com/search?q=${search_content}&app_id=${app_id}&app_key=${app_key}&from=0&to=4`;
+        var fullUrl_recipes = `https://api.edamam.com/search?q=${search_content}&app_id=${app_id}&app_key=${app_key}&from=0&to=4`; //cai nay Truong lay 4 cai de cho vua man hinh, co the lay bao nhieu cong thuc cung duoc
         console.log(fullUrl_recipes);
         sendGetRequest(fullUrl_recipes, function(responseData){
             var content_recipes_infos = responseData.hits;
@@ -128,14 +128,14 @@ function setupSearch() {
 setupSearch();
 
 
-document.addEventListener("scroll", function(event){
-    var DOMimg = document.getElementById('img-header');
-    var DOMheader = document.getElementById('header_container');
-    if (window.scrollY > 100) {
-        DOMimg.style.width = '100px';
-        DOMimg.style.height = '100px';
-    } else {
-        DOMimg.style.width = '200px';
-        DOMimg.style.height = '200px';
-    }
-});
+// document.addEventListener("scroll", function(event){
+//     var DOMimg = document.getElementById('img-header');
+//     var DOMheader = document.getElementById('header_container');
+//     if (window.scrollY > 100) {
+//         DOMimg.style.width = '100px';
+//         DOMimg.style.height = '100px';
+//     } else {
+//         DOMimg.style.width = '200px';
+//         DOMimg.style.height = '200px';
+//     }
+// });
