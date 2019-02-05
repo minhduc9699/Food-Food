@@ -17,7 +17,7 @@ function renderRecipes2(content_recipes_infoss){
         response.json().then(function(data){
             console.log(data);
             var video_id = data.items[0].id.videoId;
-            console.log(video_id);
+            console.log("video_id = " + video_id);
             //video
             var videopart = document.getElementById("white_space_left");
             var recipeHTML_video = `
@@ -37,7 +37,7 @@ function renderRecipes2(content_recipes_infoss){
     `;
     pic_recipe.insertAdjacentHTML("afterbegin", recipeHTML_img);
 
-    //source
+    //source (who made the food)
     var source_recipe = document.getElementById("source_recipe")
     var src_recipe = content_recipes_infoss.source;
     var recipeHTML_source = `
@@ -82,9 +82,10 @@ function fetchRecipes2(){
 
 fetchRecipes2();
 
+//nav_bar
 var mouseOver_outs = document.getElementsByClassName("mouseOver_out");
-var mouseOver_outIndex
-function mouseOver_out(){
+var mouseOver_outIndex;
+function mouseOver_out(mouseOver_outIndex){
     var mouseOver_out = mouseOver_outs[mouseOver_outIndex];
     mouseOver_out.addEventListener('mouseover', function(e){
         mouseOver_out.style.fontSize = '23px';
@@ -96,9 +97,12 @@ function mouseOver_out(){
 for(j = 0; j < mouseOver_outs.length; j++){
     mouseOver_out(mouseOver_outIndex = j);
 }
+
+//(not working) chinh kich co logo
 document.addEventListener("scroll", function(event){
-    var DOMimg = document.getElementById('img-header');
+    var DOMimg = document.getElementById('logo');
     var DOMheader = document.getElementById('header_container');
+    console.log(window);
     if (window.scrollY > 100) {
         DOMimg.style.width = '100px';
         DOMimg.style.height = '100px';

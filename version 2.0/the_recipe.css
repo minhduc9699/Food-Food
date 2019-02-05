@@ -1,0 +1,164 @@
+body {
+    background-color: rgb(252, 252, 252);
+}
+
+/* NAVIGATION BAR */
+nav {
+    width: 1123px;
+    margin: 0 auto;
+    background: rgb(245, 245, 245);
+    /* padding-right: 60px; */
+    box-shadow: -8px 10px 5px -8px #888888;
+}
+
+nav > ul > img {
+    cursor: pointer;
+    margin-right: 20px;
+} 
+
+nav > ul {
+    list-style-type: none;
+    font-family: 'Josefin Slab', serif;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    /* justify-content: space-between; */
+}
+
+/* nav > ul > li {
+    display: inline-block;
+    text-transform: uppercase;
+} */
+
+nav > ul > li > a {
+    text-decoration: none;
+    font-size: 30px;
+    display:block;
+    padding: 33px;
+    font-weight: 600;
+    color: black;
+}
+
+nav > ul > li > a:hover, i.fa-bars:hover {
+    background-color: rgb(220, 220, 220);
+    color: white;
+    /* animation */
+}
+
+
+/* nav > ul > li > a:active {
+    background-color: rgb(99, 96, 96);
+} */
+i.fa-bars {
+    display:none;
+}
+
+.dropdown_menu {
+    display: none;
+}
+
+@media only screen and (max-width: 1100px) {
+    nav > ul > img {
+        margin: 0 auto;
+    }
+    nav > ul > li {
+        display:none;
+    }
+    i.fa-bars {
+        display: inline;
+        font-size: 30px;
+        position: absolute;
+        padding: 27px;
+    }
+    nav > ul {
+        padding-left: 0;
+    }
+}
+/* SEARCH BAR */
+#search_bar {
+    width: 1123px;
+    margin: 0 auto;
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: nowrap;
+} 
+
+#search_box {
+    width: 1023px; 
+    font-size: 20px;
+    font-family: 'Josefin Sans', sans-serif;
+    padding: 6px;
+    /* height: 25px; */
+}
+
+#search_box_submit {
+    background: black;
+    color: white;
+    border: none;
+    font-size: 20px;
+    font-family: 'Josefin Sans', sans-serif;
+    padding: 8px;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 1123px) {
+    #search_bar {
+        width: 100%;
+    }
+    /* #search_box {
+        width: 100%;
+    } */
+}
+
+/* MAIN BODY */
+#main-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#recipe-title {
+    font-family: 'Josefin Slab', serif;
+}
+
+.recipe-body {
+    font-family:  'Josefin Sans', sans-serif;
+    font-weight: lighter;
+}
+
+#food-pic {
+    width: 700px;
+    height: 400px;
+    /* De cho anh nguyen lieu vao cung mot khuon */
+    object-fit: cover; 
+}
+
+/*
+#food-pic > img {
+    object-fit: cover;
+} */
+
+article#main-recipe {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    box-shadow: 0px 10px 5px -8px #888888;
+}
+
+div#ingredients-list {
+    background-color: silver;
+    width: 300px;
+    text-align: center;
+
+}
+
+div#ingredients-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+
+div#method {
+    width: 400px;
+    background-color: white;
+}

@@ -115,6 +115,8 @@
     background: silver;
     /* height: 100% !important;  */
     width: 70px;    
+    border: 1px black solid;
+    border-left: none;
 }
 .mySlides{
     width: 100%;
