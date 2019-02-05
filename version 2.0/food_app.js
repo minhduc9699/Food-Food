@@ -55,7 +55,7 @@ function renderInfo(content_recipes_infos){
 };
 
 /*lay api tu internet*/
-var search_contents = ["waffle", "tart", "pancake"];
+var search_contents = ["pork", 'beef', "prawn", "sausage"];
 var app_key ="13e049696e5ecdbff2fc78d4b6da8b2f";
 var app_id = "71dbab0b";
 function fetchRecipes(){
