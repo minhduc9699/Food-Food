@@ -128,7 +128,7 @@ i.fa-bars {
 
 #food-pic {
     width: 700px;
-    height: 400px;
+    height: 500px;
     /* De cho anh nguyen lieu vao cung mot khuon */
     object-fit: cover; 
 }
@@ -155,6 +155,7 @@ div#ingredients-list {
 div#ingredients-list ul {
     list-style-type: none;
     padding: 0;
+    font-weight: lighter;
 }
 
 
