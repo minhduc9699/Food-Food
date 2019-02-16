@@ -47,7 +47,8 @@ function setupSearch(e) {
     }
 
     //show search result
-    var searchString = document.querySelector('#search_box').value;
+    var searchBox = document.querySelector('#search_box');
+    var searchString = searchBox.value;
     if (searchString != '') {
         fullUrl_search_recipes = `https://api.edamam.com/search?q=${searchString}&app_id=${app_id}&app_key=${app_key}&from=0&to=32`;
         console.log(fullUrl_search_recipes);
@@ -69,10 +70,10 @@ function setupSearch(e) {
                     <img src = "${search_result_recipe_img}" alt = "${search_result_recipe_title}">
                     <h2 class = "recipe-title search-result">${search_result_recipe_title}</h2>
                     <div class = "recipe-rating">
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
                         <span class="fa fa-star"></span>
                     </div>
                 </div>
@@ -80,7 +81,19 @@ function setupSearch(e) {
                 recentRecipe.insertAdjacentHTML('beforeend', search_result_recipe_tag);
             }
 
-            console.log(id_recipe_tags);
+            //Randomly generate star ratings
+            var recipeRating = document.querySelectorAll('.recipe-rating');
+            // console.log(recipeRating);
+            for (var i = 0; i < recipeRating.length; i++) {
+                var numStars = Math.floor(Math.random()*5 + 1);
+                var recipeRatingStars = recipeRating[i].children;
+                console.log(recipeRatingStars);
+                for (var j = 0; j < numStars; j++) {
+                    recipeRatingStars[j].classList.add('checked');
+                }
+            }
+
+            // console.log(id_recipe_tags);
 
             //link recipeTag to recipe page
             var recipeTag = document.querySelectorAll('.recipe-tag');
@@ -99,9 +112,10 @@ function setupSearch(e) {
                 recipeTag[i].classList.add('hide-when-re-search');
             }
 
-            //note: maybe keep the search query somewhere for user to reuse
-            document.querySelector('#search_box').value = '';
-            //
+            //delete search content when focus
+            searchBox.addEventListener('focus', function(){
+                searchBox.value = '';
+            })
         })
 
     }

@@ -138,9 +138,21 @@ section#slide-show-container img {
     position: absolute;
     bottom: 20px;
     width: 100%;
-    text-align: center;
+    font-family: 'Josefin Slab', serif;
+    font-weight: 600px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
 }
 
+.my-slide h2 {
+    width: 400px;
+    margin: 0;
+    padding: 20px;
+    background: rgb(245, 245, 245);
+    box-shadow: -5px 10px 12px -6px #888888;
+    cursor: pointer;
+}
 
 .fade {
     animation-name: fade;
@@ -153,7 +165,7 @@ section#slide-show-container img {
   }
 /* TODAY-SPECIAL */
 
-/* RECENT-RECIPES */
+/* RECENT-RECIPES, SEARCH RESULTS */
 section#recent-recipes {
     display: flex;
     /* justify-content: center; */
