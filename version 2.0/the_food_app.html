@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="the_food_app.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:500,900,100,300,700,400' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Slab" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <section id = "header">
+        <nav class="fill">
+            <ul>
+                <i class="fas fa-bars"></i>
+                <img id = 'logo' class = 'go-home' src = "https://digitalmarketing.blob.core.windows.net/9353/files/Restaurant_PNG.png" style = "width: 319px; height: 87px;">
+                <li>
+                    <a class = "go-home" href = "#">Home</a>
+                    <ul class = 'dropdown_menu'>
+                        <li>Recipe Collection</li>
+                        <li>Popular Collection</li>
+                        <li>Baking</li>
+                    </ul>
+                </li>
+                <li><a href="#">Recipes</a></li>
+                <li><a href="#">Beverage</a></li>
+                <li><a href="#">Travel</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </nav>
+        <div id = "search_bar">
+            <form>
+                <input type = "text" placeholder="Search for over 10,000 recipes around the world" id = "search_box">
+                <input type = "submit" value = "Search" id = "search_box_submit">
+            </form>
+        </div>
+    </section>
+
+    <section id = "slide-show-container" class = "hide-when-search">
+        <div class = "my-slide fade">
+            <img src = "https://images.pexels.com/photos/46239/salmon-dish-food-meal-46239.jpeg?cs=srgb&dl=close-up-cooking-dinner-46239.jpg&fm=jpg" alt = "food's picture">
+            <div>
+                <h2>10 dishes you must try in Vietnam</h2>
+            </div>
+        </div>
+
+        <!-- <div class = "my-slide fade">
+            <img src = "https://cdn.cnn.com/cnnnext/dam/assets/171027052520-processed-foods-exlarge-tease.jpg" alt = "food's picture">
+        </div>
+
+        <div class = "my-slide fade">
+            <img src = "https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/02/07/15/chinese.jpg?w968h681" alt = "food's picture">
+        </div> -->
+    </section>
+
+    <section id = "today-special" class = "hide-when-search">
+
+    </section>
+
+    <section id = "recent-recipes">
+        <!-- <div class = "recipe-tag">
+            <img src = "https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg?cs=srgb&dl=burger-chips-dinner-70497.jpg&fm=jpg">
+            <h2 class = "recipe-title search-result">French Fries</h2>
+            <div class = "recipe-rating">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+            </div>
+        </div>-->
+        
+    </section>
+    <script src = "the_food_app.js"></script>
+</body>
+</html>

@@ -27,9 +27,9 @@ function renderInfo(content_recipes_infos){
         for(n = 0; n < ingredients.length; n++){
             var ingredient = ingredients[n];
         }
-        var url_recipes_origin = recipe_info.url;
-        var time = recipe_info.totalTime;
-        var people = recipe_info.yield;
+        // var url_recipes_origin = recipe_info.url;
+        // var time = recipe_info.totalTime;
+        // var people = recipe_info.yield;
         var uri_id = recipe_info.uri;
         var id_recipe = uri_id.split('_');
         var recipeHTML = `
