@@ -1,7 +1,7 @@
 var homeBtn = document.querySelectorAll('.go-home');
 for (var i = 0; i < homeBtn.length; i++) {
     homeBtn[i].addEventListener('click', function(){
-        window.location.href = "./food_app.html";
+        window.location.href = "./the_food_app.html";
         //ERROR: 
     })
 }
