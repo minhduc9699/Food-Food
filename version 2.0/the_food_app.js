@@ -57,16 +57,17 @@ function setupSearch(e) {
         .then((resp) => resp.json()) // Transform the data into json
         .then(function(data) {
             var recipe_search_result = data.hits;
-            var id_recipe_tags = [];
+            // var id_recipe_tags = [];
+            //Create recipe tag from API
             for (var i = 0; i < recipe_search_result.length; i++) {
                 var search_result_recipe_img = recipe_search_result[i].recipe.image;
                 var search_result_recipe_title = recipe_search_result[i].recipe.label;
                 var search_result_uri = recipe_search_result[i].recipe.uri;
                 var id_recipe_tag = search_result_uri.split('_');
                 // console.log(id_recipe_tag[1]);
-                id_recipe_tags.push(id_recipe_tag[1]);
+                // id_recipe_tags.push(id_recipe_tag[1]);
                 var search_result_recipe_tag = `
-                <div class = "recipe-tag">
+                <div class = "recipe-tag" id = "${id_recipe_tag[1]}">
                     <img src = "${search_result_recipe_img}" alt = "${search_result_recipe_title}">
                     <h2 class = "recipe-title search-result">${search_result_recipe_title}</h2>
                     <div class = "recipe-rating">
@@ -87,7 +88,7 @@ function setupSearch(e) {
             for (var i = 0; i < recipeRating.length; i++) {
                 var numStars = Math.floor(Math.random()*5 + 1);
                 var recipeRatingStars = recipeRating[i].children;
-                console.log(recipeRatingStars);
+                // console.log(recipeRatingStars);
                 for (var j = 0; j < numStars; j++) {
                     recipeRatingStars[j].classList.add('checked');
                 }
@@ -98,12 +99,11 @@ function setupSearch(e) {
             //link recipeTag to recipe page
             var recipeTag = document.querySelectorAll('.recipe-tag');
             for (var i = 0; i < recipeTag.length; i++) {
-                var tmp_id = id_recipe_tags[i];
-                recipeTag[i].addEventListener('click', function(tmp_id){
-                    let ID = tmp_id;
+                recipeTag[i].addEventListener('click', function(){
+                    let ID = this.id;
                     localStorage.setItem('id', ID);
-                    // window.location.href = './the_recipe.html'; 
-                    console.log(i + " " + " " + ID);                   
+                    window.location.href = './the_recipe.html'; 
+                    console.log(ID);                   
                 })
             }
 
