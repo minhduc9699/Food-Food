@@ -129,6 +129,10 @@ i.fa-bars {
 
 }
 
+#chef-name {
+    margin-top: 10px;
+}
+
 .recipe-body {
     font-family:  'Josefin Sans', sans-serif;
     font-weight: lighter;
