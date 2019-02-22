@@ -40,7 +40,7 @@ function setupSearch(e) {
         hideWhenSearch[i].style.display = 'none';
     }
 
-    //hide current search
+    //hide current search results
     var hideWhenReSearch = document.querySelectorAll('.hide-when-re-search');
     for (var i = 0; i < hideWhenReSearch.length; i++) {
         hideWhenReSearch[i].style.display = 'none';
@@ -114,7 +114,7 @@ function setupSearch(e) {
 
             //delete search content when focus
             searchBox.addEventListener('focus', function(){
-                searchBox.value = '';
+                this.value = '';
             })
         })
 
