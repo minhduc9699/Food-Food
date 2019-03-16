@@ -41,6 +41,7 @@ nav > ul > li > a {
     padding: 33px;
     font-weight: 600;
     color: black;
+    transition: 0.4s;
 }
 
 nav > ul > li > a:hover, i.fa-bars:hover {
@@ -72,6 +73,7 @@ i.fa-bars {
         display:none;
     }
     i.fa-bars {
+        transition: 0.4s;
         display: inline;
         font-size: 30px;
         position: absolute;
@@ -172,7 +174,7 @@ section#slide-show-container img {
     max-width: 1123px;
     height: 500px;
     margin: 0 auto;
-    background-color: rgb(245, 245, 245);
+    background-color: rgb(206, 193, 193);
 }
 
 #today-special > #special-recipe-container {
@@ -190,7 +192,25 @@ section#slide-show-container img {
     margin-top: 0px;
 }
 
+#read-more {
+    text-decoration: none;
+    border: 2px solid #333;
+    padding: 1rem 2rem;
+    font-size: 20px;
+    color: black;
+    font-weight: bold;
+    transition: 0.4s;
+}
 
+#read-more:hover {
+    background-color: #333;
+    color: white;
+}
+
+#read-more > .fa-caret-right {
+    margin-left: 10px;
+    transform: translateY(2px);
+}
 
 #today-special > #special-img-container {
     flex: 2;

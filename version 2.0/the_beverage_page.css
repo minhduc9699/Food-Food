@@ -1,0 +1,171 @@
+body {
+    background-color: rgb(252, 252, 252);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* NAVIGATION BAR */
+nav {
+    width: 1123px;
+    margin: 0 auto;
+    background: rgb(245, 245, 245);
+    /* padding-right: 60px; */
+    box-shadow: -8px 10px 5px -8px #888888;
+}
+
+nav > ul > img {
+    cursor: pointer;
+    margin-right: 20px;
+} 
+
+nav > ul {
+    list-style-type: none;
+    font-family: 'Josefin Slab', serif;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    /* justify-content: space-between; */
+}
+
+/* nav > ul > li {
+    display: inline-block;
+    text-transform: uppercase;
+} */
+
+nav > ul > li > a {
+    text-decoration: none;
+    font-size: 30px;
+    display:block;
+    padding: 33px;
+    font-weight: 600;
+    color: black;
+    transition: 0.4s;
+}
+
+nav > ul > li > a:hover, i.fa-bars:hover {
+    background-color: rgb(220, 220, 220);
+    color: white;
+    /* animation */
+}
+
+
+/* nav > ul > li > a:active {
+    background-color: rgb(99, 96, 96);
+} */
+i.fa-bars {
+    display:none;
+}
+
+.dropdown_menu {
+    display: none;
+}
+
+@media only screen and (max-width: 1100px) {
+    nav {
+        width: 100%;
+    }
+    nav > ul > img {
+        margin: 0 auto;
+    }
+    nav > ul > li {
+        display:none;
+    }
+    i.fa-bars {
+        transition: 0.4s;
+        display: inline;
+        font-size: 30px;
+        position: absolute;
+        padding: 27px;
+    }
+    nav > ul {
+        padding-left: 0;
+    }
+}
+/* SEARCH BAR */
+#search_bar {
+    max-width: 1123px;
+    margin: 0 auto;
+    margin-top: 30px;
+
+} 
+
+#search_bar form {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+#search_box {
+    width: 1041px; 
+    font-size: 20px;
+    font-family: 'Josefin Sans', sans-serif;
+    padding: 6px;
+    /* height: 25px; */
+}
+
+#search_box_submit {
+    background: black;
+    color: white;
+    border: none;
+    font-size: 20px;
+    font-family: 'Josefin Sans', sans-serif;
+    padding: 8px;
+    cursor: pointer;
+}
+
+/* #search_box_submit:hover {
+    color: black;
+    border: 1px solid black;
+    background-color: white;
+} */
+
+@media only screen and (max-width: 1123px) {
+    #search_bar form {
+        width: 100%;
+
+    }
+    /* #search_box {
+        flex: 4;
+        /* margin-right: 10px; */
+    /* }
+    #search_box_submit {
+        flex: 1;
+    } */
+} */
+
+/*DRINKS TYPES*/
+#drink-types {
+    width: 1123px;
+    margin: auto;
+}
+
+#drink-types > ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    padding: 0; 
+}
+
+/*error: padding chua duoc.*/
+#drink-types li {
+    display: flex;
+    flex-flow: column nowrap;
+    text-align: center;
+    padding: 20px 40px 10px 40px;
+    line-height: 2em;
+    font-family: 'Josefin Sans', sans-serif;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+#drink-types i {
+    font-size: 40px;
+}
+
+#drink-types li:hover {
+    /* border-bottom: 4px solid black; */
+    background-color: whitesmoke;
+    box-shadow: -8px 10px 5px -8px #888888;
+}
